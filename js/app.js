@@ -25,7 +25,7 @@ $.ajax({
 function draw_network(df){
 
     let data = [];
-    for (let i=0; i < 20; i++) {
+    for (let i=0; i < df[1].length; i++) {
         let obj = {x: width/2, y: height/2};
         obj.id = df[1][i].id
         obj.class = Math.floor(Math.random() * 2);
@@ -33,8 +33,9 @@ function draw_network(df){
         data.push(obj);
     }
 
+
     let links = [];
-    for (let i=0; i < 10; i++) {
+    for (let i=0; i < df[0].length; i++) {
         let obj = {};
         obj.source = df[0][i].infector;
         obj.target = df[0][i].infectee;
